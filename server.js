@@ -11,7 +11,7 @@ const app = express();
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-
+ 
 //////////////////////
 //DATABASE CONNECTION
 //////////////////////
