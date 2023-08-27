@@ -1,6 +1,6 @@
 # PlayPal
 
-- **Contributors:** Yuna Pahk, Isaac Asher, Haleh Bozorgnia, and Nyijia Morgan
+- **Contributors:** Yuna Pahk & Isaac Asher
 - [**Backend Render**](https://playpal-976f.onrender.com)
 - [**Deployed Site**](https://playpal-yunapahk.vercel.app/)
 - **Languages, Database, and Frameworks Used:** React, Express, Node, MongoDB, SASS, EJS, JSX, Javascript
