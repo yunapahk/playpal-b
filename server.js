@@ -3,13 +3,14 @@
 //////////////////////
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const app = express();
 require('./config/db');
 const PORT = process.env.PORT || 4567;
 
 // CORS options
 const corsOptions = {
-    origin: ['http://localhost:3000', 'https://playpal-yunapahk.vercel.app'], // Specify allowed origins
+    origin: ['http://localhost:3000', 'https://playpal-yunapahk.vercel.app'],
     credentials: true, // This is important for cookies, authorization headers with HTTPS
     optionsSuccessStatus: 200, // Some legacy browsers (IE11, various SmartTVs) choke on 204
 };
