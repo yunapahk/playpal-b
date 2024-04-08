@@ -5,7 +5,7 @@ const app = express();
 
 // Database connection
 require('./config/db');
-const PORT = process.env.PORT || 4567;
+const PORT = process.env.PORT;
 
 // IMPORT MIDDLEWARE
 const { middlewareSetup, authCheck } = require('./middleware/mid');
