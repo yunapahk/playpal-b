@@ -8,14 +8,6 @@ const app = express();
 require('./config/db');
 const PORT = process.env.PORT || 4567;
 
-// CORS options
-const corsOptions = {
-    origin: ['https://playpal-yunapahk.vercel.app'],
-    // 'http://localhost:4567', 
-    credentials: true, 
-    optionsSuccessStatus: 200, 
-};
-
 // Use CORS with options
 app.use(cors(corsOptions));
 
