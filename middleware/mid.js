@@ -8,7 +8,7 @@ const middlewareSetup = (app) => {
     app.use(cors({
         // Deployed version
         // Reminder: Switch the origin to your deployed frontend URL before deploying.
-        origin: "https://git.heroku.com/pawpal-b.git",
+        origin: "https://pawpal-b-fd152c2ad03f.herokuapp.com/",
 
         // Dev mode
         // origin: "http://localhost:3000",
