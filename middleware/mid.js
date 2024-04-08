@@ -8,10 +8,10 @@ const middlewareSetup = (app) => {
     app.use(cors({
         // Deployed version
         // Reminder: Switch the origin to your deployed frontend URL before deploying.
-        // origin: "https://git.heroku.com/playpal-yp.git/",
+        origin: "https://git.heroku.com/pawpal-b.git",
 
         // Dev mode
-        origin: "http://localhost:3000",
+        // origin: "http://localhost:3000",
         credentials: true,
     }));
     app.use(morgan('dev'));
