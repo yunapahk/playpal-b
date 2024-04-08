@@ -4,19 +4,31 @@ const cors = require('cors');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 
-const middlewareSetup = (app) => {
-    app.use(cors({
-        // Deployed version
-        // Reminder: Switch the origin to your deployed frontend URL before deploying.
-        origin: "https://playpal-yunapahk.vercel.app",
+const allowedOrigins = [
+    "https://playpal-yunapahk.vercel.app", // Production origin
+    "http://localhost:3000", // Development origin
+    'ttps://playpal-at7nrf5rq-yunapahk.vercel.app/'// test
+];
 
-        // Dev mode
-        // origin: "http://localhost:3000",
-        credentials: true,
-    }));
+const corsOptions = {
+    origin: function(origin, callback) {
+        // Allow requests with no origin (like mobile apps or curl requests)
+        if (!origin) return callback(null, true);
+        if (allowedOrigins.indexOf(origin) === -1) {
+            var msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+            return callback(new Error(msg), false);
+        }
+        return callback(null, true);
+    },
+    credentials: true, // Reflect the request's credentials (cookies, HTTP authentication) as necessary
+};
+
+const middlewareSetup = (app) => {
+    app.use(cors(corsOptions));
     app.use(morgan('dev'));
     app.use(express.json());
     app.use(cookieParser());
+    // other middleware
 };
 
 const authCheck = async (req, res, next) => {
