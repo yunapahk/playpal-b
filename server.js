@@ -7,6 +7,7 @@ const app = express();
 require('./config/db');
 const PORT = process.env.PORT || 4567;
 
+
 // Database connection
 require('./config/db');
 
